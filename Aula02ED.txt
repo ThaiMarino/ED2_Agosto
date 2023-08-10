@@ -1,0 +1,24 @@
+public void buscaBinaria(int valorBuscado, int vetor[]) {
+		boolean achou = false;
+		int meio;
+		int posicaoInicial;
+		int tamanhoVetor = vetor.length;
+		
+		for (posicaoInicial = 0; posicaoInicial < tamanhoVetor; posicaoInicial++) {
+			meio = (posicaoInicial + (tamanhoVetor - 1)) / 2;
+			if (vetor[meio] == valorBuscado) {
+				achou = true;
+				break;
+			} else if (valorBuscado < vetor[meio]) {
+				tamanhoVetor = meio - 1;
+			} else {
+				posicaoInicial = meio;
+			}
+		}
+		
+		if (achou) {
+			JOptionPane.showMessageDialog(null, "Achou no  binário!");
+		} else {
+			JOptionPane.showMessageDialog(null, "Não Achou no binário!");
+		}
+	}
